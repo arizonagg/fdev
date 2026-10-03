@@ -1,26 +1,194 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #07050e;
+    --foreground: #f3f4f6;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    min-height: 100vh;
+    overflow-x: hidden;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(0.6deg); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(10px) rotate(-0.6deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.35; transform: scale(1); }
+  50% { opacity: 0.65; transform: scale(1.1); }
+}
+
+@keyframes spin-beam {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 8s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: pulse-glow 10s ease-in-out infinite;
+}
+
+/* Splash Screen Animations */
+@keyframes splash-word-cycle {
+  0% {
+    opacity: 0;
+    filter: blur(18px);
+    transform: translateY(12px) scale(0.94);
+  }
+  20% {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateY(0px) scale(1);
+  }
+  75% {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateY(0px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    filter: blur(18px);
+    transform: translateY(-12px) scale(1.05);
+  }
+}
+
+.animate-splash-word {
+  animation: splash-word-cycle 350ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity, filter;
+}
+
+/* ========================================================
+   PRECISION ROTATING BORDER BEAM (MASK COMPOSITE EXCLUSION)
+   100% terkunci hanya pada 1.5px garis tepi border tanpa bocor ke tengah
+   ======================================================== */
+.card-border-beam {
+  position: relative;
+  border-radius: 1.5rem;
+  background: rgba(18, 10, 32, 0.65);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(216, 180, 254, 0.12);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45), 
+              inset 0 1px 1px 0 rgba(255, 255, 255, 0.15);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.card-border-beam:hover {
+  transform: translateY(-5px);
+  background: rgba(26, 15, 46, 0.75);
+  border-color: rgba(216, 180, 254, 0.25);
+  box-shadow: 0 24px 60px rgba(124, 58, 237, 0.28), 
+              0 0 30px rgba(192, 132, 252, 0.2),
+              inset 0 1px 2px 0 rgba(255, 255, 255, 0.25);
+}
+
+.border-beam-runner {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 20;
+}
+
+.border-beam-runner::after {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 300%;
+  height: 300%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    transparent 260deg,
+    rgba(168, 85, 247, 0.4) 290deg,
+    rgba(216, 180, 254, 1) 335deg,
+    rgba(244, 114, 182, 1) 360deg
+  );
+  animation: spin-beam 4s linear infinite;
+}
+
+/* Kecepatan tetap konstan 4s baik saat normal maupun hover (tidak ada lonjakan durasi) */
+.card-border-beam:hover .border-beam-runner::after {
+  filter: brightness(1.2);
+}
+
+/* ========================================================
+   VISIONOS GLASS MATERIALS
+   ======================================================== */
+.vision-glass {
+  background: rgba(26, 16, 46, 0.55);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(216, 180, 254, 0.22);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 
+              inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.25);
+}
+
+.vision-dock {
+  background: rgba(18, 10, 32, 0.75);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  border: 1px solid rgba(216, 180, 254, 0.25);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 
+              0 0 20px rgba(147, 51, 234, 0.2),
+              inset 0 1px 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.vision-input {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(216, 180, 254, 0.2);
+  backdrop-filter: blur(16px);
+  color: #fff;
+  transition: all 0.2s ease;
+}
+
+.vision-input:focus {
+  outline: none;
+  border-color: rgba(216, 180, 254, 0.8);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.35);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(168, 85, 247, 0.4);
+  border-radius: 4px;
 }
