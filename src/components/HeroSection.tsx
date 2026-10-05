@@ -10,6 +10,18 @@ export default function HeroSection() {
   return (
     <div className="relative w-full max-w-6xl mx-auto pt-4 sm:pt-8">
       <section className="text-center max-w-3xl mx-auto relative">
+        {/* Brand Logo Showcase */}
+        <div className="flex justify-center mb-6">
+          <div className="relative inline-flex items-center justify-center px-6 py-3 rounded-2xl vision-glass border border-purple-400/30 shadow-[0_0_35px_rgba(168,85,247,0.25)] hover:border-purple-400/50 hover:shadow-[0_0_50px_rgba(168,85,247,0.35)] transition-all duration-300 group">
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-600/15 via-fuchsia-600/10 to-indigo-600/15 rounded-2xl blur-lg group-hover:opacity-100 transition opacity-60 pointer-events-none" />
+            <img
+              src="/logo-white.png"
+              alt="samid.id - Web Developer"
+              className="h-10 sm:h-12 w-auto object-contain relative z-10 transition-transform duration-300 group-hover:scale-105 drop-shadow-[0_2px_12px_rgba(168,85,247,0.4)]"
+            />
+          </div>
+        </div>
+
         {/* Spatial Availability Pill */}
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full vision-glass text-xs font-medium text-purple-200 mb-6 shadow-lg shadow-purple-950/40 animate-float">
           <span className="w-2 h-2 rounded-full bg-fuchsia-400 animate-ping" />

@@ -1,10 +1,10 @@
 export const siteConfig = {
-  name: "DevStudio",
-  developerName: "Alex Pratama",
-  role: "Web Developer & WordPress Specialist",
+  name: "samid.id",
+  developerName: "Samid",
+  role: "Web Developer",
   whatsappNumber: "6281234567890", // Ganti dengan nomor WhatsApp Anda (format: 628xxx)
-  email: "contact@alexdev.studio",
-  github: "https://github.com",
+  email: "contact@samid.id",
+  github: "https://github.com/arizonagg",
   linkedin: "https://linkedin.com",
   availabilityStatus: "Tersedia untuk Proyek Baru — 2026",
 };
@@ -110,7 +110,7 @@ export const translations = {
     },
     footer: {
       copyright:
-        "© 2026 DevStudio • Web Developer & WordPress Specialist. Built with Next.js & visionOS Glassmorphism.",
+        "© 2026 samid.id • Web Developer. Built with Next.js & visionOS Glassmorphism.",
     },
   },
   en: {
@@ -211,7 +211,7 @@ export const translations = {
     },
     footer: {
       copyright:
-        "© 2026 DevStudio • Web Developer & WordPress Specialist. Built with Next.js & visionOS Glassmorphism.",
+        "© 2026 samid.id • Web Developer. Built with Next.js & visionOS Glassmorphism.",
     },
   },
 };

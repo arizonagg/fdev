@@ -11,10 +11,12 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Alex Pratama | Web Developer & WordPress Specialist",
+  title: "samid.id | Web Developer",
   description:
-    "Freelance Web Developer & WordPress Specialist. Jasa pembuatan Landing Page berkonversi tinggi, Company Profile modern, dan solusi kustom WordPress super cepat.",
+    "samid.id — Web Developer Profesional. Jasa pembuatan Landing Page berkonversi tinggi, Company Profile modern, dan solusi kustom website super cepat.",
   keywords: [
+    "samid.id",
+    "Samid Web Developer",
     "Web Developer Indonesia",
     "WordPress Specialist",
     "Jasa Landing Page",
@@ -22,12 +24,18 @@ export const metadata: Metadata = {
     "Freelance Next.js Developer",
     "WordPress Speed Optimization",
   ],
+  icons: {
+    icon: "/favicon.webp",
+    shortcut: "/favicon.webp",
+    apple: "/favicon.webp",
+  },
   openGraph: {
-    title: "Alex Pratama | Web Developer & WordPress Specialist",
+    title: "samid.id | Web Developer",
     description:
-      "Crafting high-converting web experiences, corporate profiles, and custom WordPress solutions.",
+      "Crafting high-converting web experiences, corporate profiles, and custom website solutions.",
     type: "website",
     locale: "id_ID",
+    images: ["/logo.png"],
   },
 };
 

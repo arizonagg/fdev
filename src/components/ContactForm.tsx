@@ -63,7 +63,7 @@ export default function ContactForm() {
   const handleEmailSubmit = () => {
     const subject = encodeURIComponent(`Inquiry Website: ${name} - ${service}`);
     const body = encodeURIComponent(
-      `Halo Alex,\n\nNama: ${name}\nKontak: ${contact}\nLayanan: ${service}\nEstimasi Budget: ${budget}\n\nKebutuhan:\n${message}\n\nTerima kasih.`
+      `Halo ${siteConfig.developerName},\n\nNama: ${name}\nKontak: ${contact}\nLayanan: ${service}\nEstimasi Budget: ${budget}\n\nKebutuhan:\n${message}\n\nTerima kasih.`
     );
     window.open(`mailto:${siteConfig.email}?subject=${subject}&body=${body}`);
   };
