@@ -36,6 +36,12 @@ export const translations = {
       badgeExpTitle: "3+ Tahun Pengalaman",
       badgeExpSub: "Web & WordPress Dev",
     },
+    techStack: {
+      badge: "Tech Stack & Tooling",
+      title: "Teknologi & Tool Pilihan",
+      subtitle:
+        "Didukung ekosistem modern yang menjamin performa super cepat, keamanan tinggi, dan skalabilitas jangka panjang.",
+    },
     services: {
       badge: "Pilar Keahlian",
       title: "Pilar Layanan Spesialis",
@@ -136,6 +142,12 @@ export const translations = {
       badgeRightSub: "Core Web Vitals Pass",
       badgeExpTitle: "3+ Years Experience",
       badgeExpSub: "Web & WordPress Dev",
+    },
+    techStack: {
+      badge: "Tech Stack & Tooling",
+      title: "Battle-Tested Tech & Tools",
+      subtitle:
+        "Powered by a modern ecosystem engineered for blazing speed, robust security, and seamless scalability.",
     },
     services: {
       badge: "Core Expertise",

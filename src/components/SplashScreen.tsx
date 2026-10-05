@@ -84,17 +84,6 @@ export default function SplashScreen() {
 
       {/* Pure Focal Greeting Word with Blur Fade In / Fade Out */}
       <div className="relative z-10 flex flex-col items-center justify-center px-4 max-w-2xl text-center">
-        {/* Floating Brand Mark */}
-        <div className="mb-4 sm:mb-6">
-          <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-purple-500/15 border border-purple-400/30 flex items-center justify-center p-2.5 shadow-[0_0_30px_rgba(168,85,247,0.4)] backdrop-blur-xl animate-float">
-            <img
-              src="/favicon.webp"
-              alt="samid.id"
-              className="w-full h-full object-contain drop-shadow-[0_0_12px_rgba(168,85,247,0.8)]"
-            />
-          </div>
-        </div>
-
         <div
           key={`word-${currentIndex}`}
           className="animate-splash-word min-h-[90px] sm:min-h-[130px] flex items-center justify-center"

@@ -25,9 +25,12 @@ export const metadata: Metadata = {
     "WordPress Speed Optimization",
   ],
   icons: {
-    icon: "/favicon.webp",
-    shortcut: "/favicon.webp",
-    apple: "/favicon.webp",
+    icon: [
+      { url: "/SAMID-FAVICO.webp", type: "image/webp" },
+      { url: "/favicon.png", type: "image/png" },
+    ],
+    shortcut: "/SAMID-FAVICO.webp",
+    apple: "/SAMID-FAVICO.webp",
   },
   openGraph: {
     title: "samid.id | Web Developer",
