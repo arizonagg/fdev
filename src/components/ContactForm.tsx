@@ -9,18 +9,16 @@ export default function ContactForm() {
   const { t } = useLanguage();
   const [name, setName] = useState("");
   const [contact, setContact] = useState("");
-  const [service, setService] = useState(t.contact.servicesOptions[0]);
-  const [budget, setBudget] = useState(t.contact.budgetOptions[0]);
+  const [serviceIndex, setServiceIndex] = useState(0);
+  const [budgetIndex, setBudgetIndex] = useState(0);
   const [message, setMessage] = useState("");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  // Synchronize default service when language changes
-  useEffect(() => {
-    if (!t.contact.servicesOptions.includes(service)) {
-      setService(t.contact.servicesOptions[0]);
-    }
-  }, [t, service]);
+  const selectedService =
+    t.contact.servicesOptions[serviceIndex] || t.contact.servicesOptions[0];
+  const selectedBudget =
+    t.contact.budgetOptions[budgetIndex] || t.contact.budgetOptions[0];
 
   // Click outside and Escape key handler for dropdown
   useEffect(() => {
@@ -50,7 +48,7 @@ export default function ContactForm() {
   const handleWhatsAppSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    const formattedText = `Halo! Saya ${name} (${contact}).%0A%0ASaya tertarik untuk mendiskusikan pembuatan website:%0A• *Layanan:* ${service}%0A• *Estimasi Budget:* ${budget}%0A• *Kebutuhan:* ${
+    const formattedText = `Halo! Saya ${name} (${contact}).%0A%0ASaya tertarik untuk mendiskusikan pembuatan website:%0A• *Layanan:* ${selectedService}%0A• *Estimasi Budget:* ${selectedBudget}%0A• *Kebutuhan:* ${
       message || "-"
     }%0A%0ABisa jadwalkan waktu diskusi? Terima kasih!`;
 
@@ -61,9 +59,9 @@ export default function ContactForm() {
   };
 
   const handleEmailSubmit = () => {
-    const subject = encodeURIComponent(`Inquiry Website: ${name} - ${service}`);
+    const subject = encodeURIComponent(`Inquiry Website: ${name} - ${selectedService}`);
     const body = encodeURIComponent(
-      `Halo ${siteConfig.developerName},\n\nNama: ${name}\nKontak: ${contact}\nLayanan: ${service}\nEstimasi Budget: ${budget}\n\nKebutuhan:\n${message}\n\nTerima kasih.`
+      `Halo ${siteConfig.developerName},\n\nNama: ${name}\nKontak: ${contact}\nLayanan: ${selectedService}\nEstimasi Budget: ${selectedBudget}\n\nKebutuhan:\n${message}\n\nTerima kasih.`
     );
     window.open(`mailto:${siteConfig.email}?subject=${subject}&body=${body}`);
   };
@@ -72,7 +70,7 @@ export default function ContactForm() {
     <section id="contact" className="max-w-3xl mx-auto space-y-8">
       <div className="text-center">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-400/20 text-xs font-semibold text-purple-300 mb-3 uppercase tracking-wider">
-          {t.contact.badge}
+          <span>{t.contact.badge}</span>
         </div>
         <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
           {t.contact.title}
@@ -122,7 +120,7 @@ export default function ContactForm() {
             </div>
           </div>
 
-          {/* Service Selector (Custom VisionOS Dropdown with High-Contrast Legible Text) */}
+          {/* Service Selector */}
           <div className="relative" ref={dropdownRef}>
             <label className="block text-xs font-semibold uppercase tracking-wider text-purple-200 mb-2">
               {t.contact.labels.service}
@@ -135,7 +133,7 @@ export default function ContactForm() {
               aria-expanded={isDropdownOpen}
               className="w-full px-4 py-3 rounded-xl vision-input text-sm text-left flex items-center justify-between gap-3 cursor-pointer bg-[#140b26]/90 border border-purple-400/30 text-white shadow-inner focus:outline-none focus:border-purple-300 focus:ring-2 focus:ring-purple-400/30 transition hover:border-purple-400/50"
             >
-              <span className="text-white font-medium truncate">{service}</span>
+              <span className="text-white font-medium truncate">{selectedService}</span>
               <ChevronDown
                 className={`w-4 h-4 text-purple-300 transition-transform duration-200 shrink-0 ${
                   isDropdownOpen ? "rotate-180 text-fuchsia-300" : ""
@@ -150,7 +148,7 @@ export default function ContactForm() {
                 className="absolute top-full left-0 right-0 mt-2 z-50 rounded-xl vision-glass border border-purple-400/40 p-1.5 shadow-2xl backdrop-blur-3xl bg-[#140b28]/98 overflow-hidden space-y-1"
               >
                 {t.contact.servicesOptions.map((opt, idx) => {
-                  const isSelected = service === opt;
+                  const isSelected = serviceIndex === idx;
                   return (
                     <button
                       key={idx}
@@ -158,7 +156,7 @@ export default function ContactForm() {
                       role="option"
                       aria-selected={isSelected}
                       onClick={() => {
-                        setService(opt);
+                        setServiceIndex(idx);
                         setIsDropdownOpen(false);
                       }}
                       className={`w-full px-3.5 py-3 rounded-lg text-left text-xs sm:text-sm font-medium transition flex items-center justify-between gap-2 cursor-pointer ${
@@ -190,8 +188,8 @@ export default function ContactForm() {
                     type="radio"
                     name="budget_option"
                     value={bOpt}
-                    checked={budget === bOpt}
-                    onChange={() => setBudget(bOpt)}
+                    checked={budgetIndex === idx}
+                    onChange={() => setBudgetIndex(idx)}
                     className="peer sr-only"
                   />
                   <div className="px-3 py-2 rounded-xl text-center text-xs font-medium bg-white/5 border border-white/10 peer-checked:bg-purple-600/60 peer-checked:border-purple-400 peer-checked:text-white text-neutral-300 transition">

@@ -1,7 +1,6 @@
 "use client";
 
 import { useLanguage } from "@/context/LanguageContext";
-import { siteConfig } from "@/config/site";
 
 export default function FloatingDock() {
   const { language, setLanguage, t } = useLanguage();
@@ -56,7 +55,7 @@ export default function FloatingDock() {
                 : "text-neutral-400 hover:text-white"
             }`}
           >
-            🇮🇩 ID
+            ID
           </button>
           <button
             type="button"
@@ -67,7 +66,7 @@ export default function FloatingDock() {
                 : "text-neutral-400 hover:text-white"
             }`}
           >
-            🇬🇧 EN
+            EN
           </button>
         </div>
 

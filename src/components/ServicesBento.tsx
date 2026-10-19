@@ -9,6 +9,9 @@ export default function ServicesBento() {
   return (
     <section id="services" className="space-y-10">
       <div className="text-center">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-400/20 text-xs font-semibold text-purple-300 mb-3 uppercase tracking-wider">
+          <span>{t.services.badge}</span>
+        </div>
         <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
           {t.services.title}
         </h2>

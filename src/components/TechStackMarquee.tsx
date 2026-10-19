@@ -13,7 +13,7 @@ interface TechItem {
 
 const ROW_1: TechItem[] = [
   {
-    name: "Next.js 15",
+    name: "Next.js",
     category: "Fullstack",
     detail: "App Router & SSR",
     iconBg: "bg-white/10 border-white/20",
@@ -26,8 +26,8 @@ const ROW_1: TechItem[] = [
   },
   {
     name: "WordPress",
-    category: "CMS & Headless",
-    detail: "Custom Themes & Gutenberg",
+    category: "CMS",
+    detail: "Custom Themes & Blocks",
     iconBg: "bg-sky-500/15 border-sky-400/30",
     iconColor: "text-sky-400",
     svgPath: (
@@ -37,9 +37,9 @@ const ROW_1: TechItem[] = [
     ),
   },
   {
-    name: "React 19",
+    name: "React",
     category: "Frontend",
-    detail: "Hooks & Server Actions",
+    detail: "Interactive UI",
     iconBg: "bg-cyan-500/15 border-cyan-400/30",
     iconColor: "text-cyan-400",
     svgPath: (
@@ -66,7 +66,7 @@ const ROW_1: TechItem[] = [
   {
     name: "Tailwind CSS",
     category: "Styling",
-    detail: "Ultra-Fast Modern UI",
+    detail: "Modern Responsive UI",
     iconBg: "bg-teal-500/15 border-teal-400/30",
     iconColor: "text-teal-400",
     svgPath: (
@@ -76,31 +76,7 @@ const ROW_1: TechItem[] = [
     ),
   },
   {
-    name: "WooCommerce",
-    category: "E-Commerce",
-    detail: "Payment & Catalog Engine",
-    iconBg: "bg-purple-500/15 border-purple-400/30",
-    iconColor: "text-purple-400",
-    svgPath: (
-      <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
-        <path d="M2.5 6h19c.8 0 1.5.7 1.5 1.5v9c0 .8-.7 1.5-1.5 1.5h-19C1.7 18 1 17.3 1 16.5v-9C1 6.7 1.7 6 2.5 6zm2.8 3.5c-.8 0-1.3.6-1.3 1.3 0 .8.6 1.3 1.3 1.3.8 0 1.3-.6 1.3-1.3 0-.8-.6-1.3-1.3-1.3zm6 0c-.8 0-1.3.6-1.3 1.3 0 .8.6 1.3 1.3 1.3.8 0 1.3-.6 1.3-1.3 0-.8-.6-1.3-1.3-1.3zm6 0c-.8 0-1.3.6-1.3 1.3 0 .8.6 1.3 1.3 1.3.8 0 1.3-.6 1.3-1.3 0-.8-.6-1.3-1.3-1.3z" />
-      </svg>
-    ),
-  },
-  {
-    name: "Node.js",
-    category: "Runtime",
-    detail: "High-Performance APIs",
-    iconBg: "bg-emerald-500/15 border-emerald-400/30",
-    iconColor: "text-emerald-400",
-    svgPath: (
-      <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
-        <path d="M12 2l9 5.2v10.4l-9 5.2-9-5.2V7.2L12 2zm0 2.3L4.8 8.5v7l7.2 4.2 7.2-4.2v-7L12 4.3z" />
-      </svg>
-    ),
-  },
-  {
-    name: "PHP 8.3",
+    name: "PHP",
     category: "Backend",
     detail: "WordPress Core & APIs",
     iconBg: "bg-indigo-500/15 border-indigo-400/30",
@@ -116,8 +92,8 @@ const ROW_1: TechItem[] = [
 const ROW_2: TechItem[] = [
   {
     name: "Supabase",
-    category: "BaaS & Auth",
-    detail: "Realtime PostgreSQL",
+    category: "Backend",
+    detail: "PostgreSQL & Auth",
     iconBg: "bg-emerald-500/15 border-emerald-400/30",
     iconColor: "text-emerald-400",
     svgPath: (
@@ -127,21 +103,21 @@ const ROW_2: TechItem[] = [
     ),
   },
   {
-    name: "PostgreSQL",
-    category: "Database",
-    detail: "Relational Data Integrity",
-    iconBg: "bg-blue-600/15 border-blue-400/30",
-    iconColor: "text-blue-400",
+    name: "Node.js",
+    category: "Runtime",
+    detail: "Fast APIs & Serverless",
+    iconBg: "bg-emerald-500/15 border-emerald-400/30",
+    iconColor: "text-emerald-400",
     svgPath: (
       <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
-        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 16h-2v-2h2v2zm0-4h-2V7h2v7z" />
+        <path d="M12 2l9 5.2v10.4l-9 5.2-9-5.2V7.2L12 2zm0 2.3L4.8 8.5v7l7.2 4.2 7.2-4.2v-7L12 4.3z" />
       </svg>
     ),
   },
   {
     name: "Core Web Vitals",
     category: "Performance",
-    detail: "Score 95+ PageSpeed",
+    detail: "PageSpeed Optimization",
     iconBg: "bg-amber-500/15 border-amber-400/30",
     iconColor: "text-amber-400",
     svgPath: (
@@ -151,9 +127,9 @@ const ROW_2: TechItem[] = [
     ),
   },
   {
-    name: "REST & GraphQL",
-    category: "API Integration",
-    detail: "Seamless Data Fetching",
+    name: "REST APIs",
+    category: "Integration",
+    detail: "Clean Data Fetching",
     iconBg: "bg-fuchsia-500/15 border-fuchsia-400/30",
     iconColor: "text-fuchsia-400",
     svgPath: (
@@ -165,21 +141,9 @@ const ROW_2: TechItem[] = [
     ),
   },
   {
-    name: "Figma to Code",
-    category: "Design System",
-    detail: "Pixel-Perfect Conversion",
-    iconBg: "bg-rose-500/15 border-rose-400/30",
-    iconColor: "text-rose-400",
-    svgPath: (
-      <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
-        <path d="M8 2h4v4H8V2zm0 4h4v4H8V6zm0 8a4 4 0 1 1 0-8h4v8H8zm8-12a4 4 0 0 1 4 4 4 4 0 0 1-4 4h-4V2h4zm0 8a4 4 0 0 1 4 4 4 4 0 0 1-4 4h-4v-8h4z" />
-      </svg>
-    ),
-  },
-  {
     name: "Git & GitHub",
     category: "Workflow",
-    detail: "CI/CD & Version Control",
+    detail: "Version Control & CI/CD",
     iconBg: "bg-purple-600/15 border-purple-400/30",
     iconColor: "text-purple-300",
     svgPath: (
@@ -189,26 +153,14 @@ const ROW_2: TechItem[] = [
     ),
   },
   {
-    name: "Vercel & Edge",
+    name: "Vercel",
     category: "Deployment",
-    detail: "Global CDN & Zero Downtime",
+    detail: "Edge Network & CDN",
     iconBg: "bg-white/10 border-white/20",
     iconColor: "text-white",
     svgPath: (
       <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
         <path d="M12 1L24 22H0L12 1Z" />
-      </svg>
-    ),
-  },
-  {
-    name: "Redis Cache",
-    category: "Optimization",
-    detail: "Sub-Second In-Memory Speed",
-    iconBg: "bg-red-500/15 border-red-400/30",
-    iconColor: "text-red-400",
-    svgPath: (
-      <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
-        <path d="M21 7.5L12 2.25 3 7.5v9l9 5.25 9-5.25v-9zm-9 1.5l6-3.5v7l-6 3.5-6-3.5v-7l6 3.5z" />
       </svg>
     ),
   },
@@ -218,11 +170,10 @@ export default function TechStackMarquee() {
   const { t } = useLanguage();
 
   return (
-    <section id="tech-stack" className="relative w-full max-w-6xl mx-auto overflow-hidden">
+    <section id="tech-stack" className="relative w-full max-w-6xl mx-auto overflow-hidden scroll-mt-28">
       {/* Section Header */}
       <div className="text-center max-w-2xl mx-auto mb-10 px-4">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-400/20 text-xs font-semibold text-purple-300 mb-3 uppercase tracking-wider">
-          <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
           <span>{t.techStack.badge}</span>
         </div>
         <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
@@ -233,21 +184,16 @@ export default function TechStackMarquee() {
         </p>
       </div>
 
-      {/* Marquee Wrapper with Smooth Horizontal Fade Out Gradients */}
-      <div className="marquee-container relative w-full space-y-4 py-2">
-        {/* Left Fade Mask */}
-        <div className="absolute left-0 inset-y-0 w-16 sm:w-32 bg-gradient-to-r from-[#07050e] via-[#07050e]/80 to-transparent z-20 pointer-events-none" />
-        
-        {/* Right Fade Mask */}
-        <div className="absolute right-0 inset-y-0 w-16 sm:w-32 bg-gradient-to-l from-[#07050e] via-[#07050e]/80 to-transparent z-20 pointer-events-none" />
+      {/* Marquee Wrapper */}
+      <div className="marquee-container relative w-full space-y-2 py-2">
 
         {/* ROW 1: Scrolling Left */}
-        <div className="overflow-hidden flex">
+        <div className="overflow-hidden flex py-2.5">
           <div className="animate-marquee flex items-center gap-4">
             {ROW_1.concat(ROW_1).map((item, idx) => (
               <div
                 key={`r1-${idx}`}
-                className="group vision-glass rounded-2xl p-3.5 sm:px-5 sm:py-4 flex items-center gap-3.5 min-w-[210px] sm:min-w-[240px] hover:border-purple-400/50 hover:bg-purple-950/30 transition-all duration-300 hover:scale-[1.02] shadow-lg cursor-default select-none"
+                className="group tech-marquee-card rounded-2xl p-3.5 sm:px-5 sm:py-4 flex items-center gap-3.5 min-w-[210px] sm:min-w-[240px] hover:scale-[1.02] cursor-default select-none"
               >
                 <div
                   className={`w-10 h-10 rounded-xl ${item.iconBg} ${item.iconColor} border flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110 shadow-sm`}
@@ -270,12 +216,12 @@ export default function TechStackMarquee() {
         </div>
 
         {/* ROW 2: Scrolling Right (Reverse) */}
-        <div className="overflow-hidden flex">
+        <div className="overflow-hidden flex py-2.5">
           <div className="animate-marquee-reverse flex items-center gap-4">
             {ROW_2.concat(ROW_2).map((item, idx) => (
               <div
                 key={`r2-${idx}`}
-                className="group vision-glass rounded-2xl p-3.5 sm:px-5 sm:py-4 flex items-center gap-3.5 min-w-[210px] sm:min-w-[240px] hover:border-purple-400/50 hover:bg-purple-950/30 transition-all duration-300 hover:scale-[1.02] shadow-lg cursor-default select-none"
+                className="group tech-marquee-card rounded-2xl p-3.5 sm:px-5 sm:py-4 flex items-center gap-3.5 min-w-[210px] sm:min-w-[240px] hover:scale-[1.02] cursor-default select-none"
               >
                 <div
                   className={`w-10 h-10 rounded-xl ${item.iconBg} ${item.iconColor} border flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110 shadow-sm`}

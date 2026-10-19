@@ -11,9 +11,9 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "samid.id | Web Developer",
+  title: "samid.id | Web Developer & WordPress Specialist",
   description:
-    "samid.id — Web Developer Profesional. Jasa pembuatan Landing Page berkonversi tinggi, Company Profile modern, dan solusi kustom website super cepat.",
+    "samid.id, Web Developer & WordPress Specialist. Jasa pembuatan Landing Page cepat, Company Profile modern, dan solusi kustom website.",
   keywords: [
     "samid.id",
     "Samid Web Developer",
@@ -22,7 +22,6 @@ export const metadata: Metadata = {
     "Jasa Landing Page",
     "Jasa Company Profile",
     "Freelance Next.js Developer",
-    "WordPress Speed Optimization",
   ],
   icons: {
     icon: [
@@ -33,9 +32,9 @@ export const metadata: Metadata = {
     apple: "/SAMID-FAVICO.webp",
   },
   openGraph: {
-    title: "samid.id | Web Developer",
+    title: "samid.id | Web Developer & WordPress Specialist",
     description:
-      "Crafting high-converting web experiences, corporate profiles, and custom website solutions.",
+      "Web developer yang fokus pada pembuatan website cepat, responsif, dan mudah dikelola.",
     type: "website",
     locale: "id_ID",
     images: ["/logo.png"],
